@@ -1,0 +1,220 @@
+###login
+post http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "admin"
+}
+
+# USER
+
+### Users
+get http://localhost:3000/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjksImZpcnN0TmFtZSI6IkxldmVudGUiLCJsYXN0TmFtZSI6IkbDvGxlIiwiZ2VuZGVyIjoiZsOpcmZpIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwaG9uZU51bWJlciI6IjA2MzAxMjM0NTM1IiwicGVybWlzc2lvbiI6MX0sImlhdCI6MTY0Njc0MzQwNiwiZXhwIjoxNjQ2NzQ3MDA2fQ.Y38yW1pX655_gj3oBbTIpVcVj8uItTOFz3xssKiEMQ8
+
+
+### 1 User
+get http://localhost:3000/api/users/9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NDMxNTE5NCwiZXhwIjoxNjQ0MzE4Nzk0fQ.q2ih8UiVs51Pa3UEc908O6tLt5Upl9NOlidEmQSksMQ
+
+### Add user 
+post http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+     "firstName": "Levente",
+     "lastName": "Füle",
+     "gender": "férfi",
+     "email": "admin@gmail.com",
+     "password": "admin123456789",
+     "phoneNumber": "06304512350",
+     "permission": 1
+}
+
+### User módosítása
+put http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "firstName": "Levente",
+    "lastName": "Füle",
+    "gender": "férfi",
+    "email": "admin@gmail.com",
+    "password": "admin",
+    "phoneNumber":"06301234535",
+    "permission": 1,
+    "id": 9
+}
+
+### Delete user
+delete http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "id": 1
+}
+
+
+#CATEGORY
+
+
+### create categorys
+post http://localhost:3000/api/users/category
+Content-Type: application/json
+
+{
+    "id": 2,
+     "categoryName": "Gin"
+}
+
+### get categorys
+get http://localhost:3000/api/users/category/categories
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTEyNTYzOCwiZXhwIjoxNjQ1MTI5MjM4fQ.62U_xM_tXvohkZ1TlZqxSLLil5Y1dTbfmPgB2JYUlsQ
+
+
+### Egy category
+get http://localhost:3000/api/users/category/categories/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
+
+
+### category módosítása
+put http://localhost:3000/api/users/category
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTEyNTYzOCwiZXhwIjoxNjQ1MTI5MjM4fQ.62U_xM_tXvohkZ1TlZqxSLLil5Y1dTbfmPgB2JYUlsQ
+
+{
+    "CategoryName": "Pálinka",
+    "id": 1
+}
+
+### Delete category
+delete http://localhost:3000/api/users/category
+Content-Type: application/json
+
+{
+    "id": 2
+}
+
+### Items hozzáadása
+post http://localhost:3000/api/users/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
+
+{ 
+    "categoryesId": 1, 
+    "itemName": "árpád alma pálinka", 
+    "image": "https://www.google.com/search?q=%C3%A1rp%C3%A1d+alma+p%C3%A1linka&hl=hu&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiz_4u1obb2AhWQyqQKHebKBWcQ_AUoAXoECAEQAw&biw=1920&bih=979&dpr=1#imgrc=vRdWbTfQ_OAhSM",
+    "unit": "0.5L",
+    "alcoholcontent": "40%",
+    "brand": "Árpád Pálinka"
+
+ }
+
+### get items
+get http://localhost:3000/api/users/items/itemList
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
+
+### Egy Item
+get http://localhost:3000/api/users/items/itemList/6
+Authorization: Bearer
+
+### item módosítása
+put http://localhost:3000/api/users/items
+Content-Type: application/json
+
+{
+    "categoryesId": 1,
+    "itemName": "árpád alma pálink",
+    "Image": "https://www.google.com/search?q=%C3%A1rp%C3%A1d+alma+p%C3%A1linka&hl=hu&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiz_4u1obb2AhWQyqQKHebKBWcQ_AUoAXoECAEQAw&biw=1920&bih=979&dpr=1#imgrc=vRdWbTfQ_OAhSM",
+    "unit": "0.5L",
+    "alcoholcontent": 40,
+    "brand":"Árpád Pálinka",
+    "id": 6
+}
+
+### Delete item
+delete http://localhost:3000/api/users/items
+Content-Type: application/json
+
+{
+    "id": 6
+}
+
+### Item prices hozzáadása
+post http://localhost:3000/api/users/itemprices
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
+
+{ 
+    "itemId": 8, 
+    "Date": "2022-03-25 08:27:35", 
+    "price": "7999"
+}
+
+### get itemprices
+get http://localhost:3000/api/users/items/itemprices
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTEyNTYzOCwiZXhwIjoxNjQ1MTI5MjM4fQ.62U_xM_tXvohkZ1TlZqxSLLil5Y1dTbfmPgB2JYUlsQ
+
+### Egy itemprice
+get http://localhost:3000/api/users/items/itemprices/2"
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NDMxNTE5NCwiZXhwIjoxNjQ0MzE4Nzk0fQ.q2ih8UiVs51Pa3UEc908O6tLt5Upl9NOlidEmQSksMQ
+
+### price módosítása
+put http://localhost:3000/api/users/items/itemprices
+Content-Type: application/json
+
+{
+    "itemId": 1,
+    "Date": "2022-03-25",
+    "price": "9998",
+    "id": 2
+}
+
+### Delete itemprice
+delete http://localhost:3000/api/users/itemprices
+Content-Type: application/json
+
+{
+    "id": 6
+}
+
+### userrating hozzáadása
+post http://localhost:3000/api/users/userrating
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
+
+{ 
+    "userId": 1, 
+    "comment": "Ez szar", 
+    "rating": 2,
+    "itemId": 5
+ }
+
+### get userratings
+get http://localhost:3000/api/users/items/userrating
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTEyNTYzOCwiZXhwIjoxNjQ1MTI5MjM4fQ.62U_xM_tXvohkZ1TlZqxSLLil5Y1dTbfmPgB2JYUlsQ
+
+### Egy userrating
+get http://localhost:3000/api/users/items/userrating/2"
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NDMxNTE5NCwiZXhwIjoxNjQ0MzE4Nzk0fQ.q2ih8UiVs51Pa3UEc908O6tLt5Upl9NOlidEmQSksMQ
+
+### userrating módosítása
+put http://localhost:3000/api/users/items/userrating
+Content-Type: application/json
+
+{
+    "userId": 1,
+    "comment": "Ez nagyon jó",
+    "rating": 10,
+    "itemId": 2,
+    "id": 2
+}
+
+### Delete userrating
+delete http://localhost:3000/api/users/items/userrating
+Content-Type: application/json
+
+{
+    "id": 1
+}
