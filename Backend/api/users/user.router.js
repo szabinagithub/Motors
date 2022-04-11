@@ -59,11 +59,6 @@ router.get("/users/items/userrating", checkToken, getUserRateing);
 router.get("/users/items/userrating/:id", checkToken, getUserRatingById);
 router.put("/users/items/userrating", checkToken, updateUserRating);
 router.delete("/users/items/userrating", checkToken, deleteUserRating);
-// app.get("/api", (req, res)=>{
-//     res.json({
-//         success: 1,
-//         message: "this is rest api working"
-//     });
-// });
+
 
 module.exports = router;

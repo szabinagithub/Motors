@@ -1,15 +1,15 @@
 const {
      create,
-     getUserByUserId,
+     getUsersByUserId,
      getUsers,
-     updateUser,
+     updateUsers,
      deleteUser,
-     getUserByUserEmail,
-     createCategory,
-     getCategories,
-     getCategoryById,
-     updateCategory,
-     deleteCategory,
+     getUsersByUserEmail,
+     createBrands,
+     getBrands,
+     getBrandsById,
+     updateBrands,
+     deleteBrands,
      createItems,
      getItems,
      getItemById,
@@ -28,8 +28,8 @@ const {
 } = require("./user.service.js");
 
 const {
-    genSaltSync, //(sózza a jelszót és összefűzi a generált titkos hessel)
-    hashSync, //(jelszó hesselése)
+    genSaltSync, 
+    hashSync, 
     compareSync
 } = require("bcrypt");
 
@@ -38,7 +38,7 @@ const {
 } = require("jsonwebtoken");
 
 module.exports = {
-    //#region 
+    
     createUser: (req, res) => {
         const body = req.body;
         const salt = genSaltSync(10);
@@ -698,5 +698,5 @@ module.exports = {
             }
         });
      }
-//#endregion
+
 }

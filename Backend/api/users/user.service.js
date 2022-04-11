@@ -2,8 +2,8 @@ const pool = require("../../config/database.js");
 
 module.exports = {
     create: (data, callBack) => {
-        let queryString = `INSERT INTO user
-        (firstName,lastName,gender,email,password,phoneNumber,permission)
+        let queryString = `INSERT INTO users
+        (id,email,password,permission,name)
         VALUES
         (?,?,?,?,?,?,?)
         `
@@ -16,9 +16,9 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    createCategory: (data, callBack) => {
-        let queryString = `INSERT INTO category
-        (id,CategoryName)
+    createBrands: (data, callBack) => {
+        let queryString = `INSERT INTO brands
+        (id,brandName)
         VALUES
         (?,?)
         `
@@ -31,9 +31,9 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    createItems: (data, callBack) => {
-        let queryString = `INSERT INTO item
-        (categoryesId,itemName,image,unit,alcoholcontent,brand)
+    createMotors: (data, callBack) => {
+        let queryString = `INSERT INTO motors
+        (id,name,price,brandId,motoVolume,height,typeId)
           VALUES
           (?,?,?,?,?,?)
         `
@@ -46,9 +46,9 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    createitemPrices: (data, callBack) => {
-        let queryString = `INSERT INTO itemprice
-        (itemId,Date,price)
+    createTypes: (data, callBack) => {
+        let queryString = `INSERT INTO types
+        (id,type)
         VALUES
         (?,?,?)
         `
@@ -61,9 +61,9 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    createuserrating: (data, callBack) => {
-        let queryString = `INSERT INTO userrating
-        (userId,comment,rating,itemId)
+    createVotes: (data, callBack) => {
+        let queryString = `INSERT INTO votes
+        (id,vote,userId,motoId)
         VALUES
         (?,?,?,?)
         `
@@ -76,8 +76,8 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    getUserByUserEmail: (email, callBack) => {
-        let queryString = `select * from user where email = ?`;
+    getUsersByUserEmail: (email, callBack) => {
+        let queryString = `select * from users where email = ?`;
         let params = [email];
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
@@ -86,8 +86,8 @@ module.exports = {
             return callBack(null, results[0]);
         });
     },
-    getItemPrices: callBack => {
-        const queryString = `SELECT * FROM itemprice`;
+    getMotors: callBack => {
+        const queryString = `SELECT * FROM motors`;
         const params = [];
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
@@ -98,7 +98,7 @@ module.exports = {
         });
     },
     getUsers: callBack => {
-        const queryString = `SELECT * FROM user`;
+        const queryString = `SELECT * FROM users`;
         const params = [];
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
@@ -108,8 +108,8 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    getCategories: callBack => {
-        const queryString = `select * from category`;
+    getBrands: callBack => {
+        const queryString = `select * from brands`;
         const params = [];
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
@@ -119,8 +119,8 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    getItems: callBack => {
-        const queryString = `select * from item`;
+    getTypes: callBack => {
+        const queryString = `select * from types`;
         const params = [];
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
@@ -130,8 +130,8 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    getUserRateing: callBack => {
-        const queryString = `select * from userrating`;
+    getUserVotes: callBack => {
+        const queryString = `select * from votes`;
         const params = [];
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
@@ -141,8 +141,8 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    getItemById: (id, callBack) => {
-        const queryString = `SELECT * FROM item where id=?`;
+    getBrandsById: (id, callBack) => {
+        const queryString = `SELECT * FROM brands where id=?`;
         const params = [id];
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
@@ -152,8 +152,8 @@ module.exports = {
             return callBack(null, results[0]);
         });
     },
-    getUserRatingById: (id, callBack) => {
-        const queryString = `SELECT * FROM userrating where id=?`;
+    getUserVotesById: (id, callBack) => {
+        const queryString = `SELECT * FROM votes where id=?`;
         const params = [id];
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
@@ -163,8 +163,8 @@ module.exports = {
             return callBack(null, results[0]);
         });
     },
-    getItemPriceById: (id, callBack) => {
-        const queryString = `SELECT * FROM itemprice WHERE id = ?`;
+    getMotorsById: (id, callBack) => {
+        const queryString = `SELECT * FROM motors WHERE id = ?`;
         const params = [id];
         // params= []
         // const queryString = `select * from registration where id=${id}`;
@@ -178,8 +178,8 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    getUserByUserId: (id, callBack) => {
-        const queryString = `SELECT * FROM user WHERE id = ?`;
+    getUsersByUserId: (id, callBack) => {
+        const queryString = `SELECT * FROM users WHERE id = ?`;
         const params = [id];
         // params= []
         // const queryString = `select * from registration where id=${id}`;
@@ -193,8 +193,8 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    getCategoryById: (id, callBack) => {
-        const queryString = `select * from category where id=?`;
+    getTypesById: (id, callBack) => {
+        const queryString = `select * from types where id=?`;
         const params = [id];
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
@@ -204,9 +204,9 @@ module.exports = {
             return callBack(null, results[0]);
         });
     },
-    updateUser: (data, callBack) => {
-        const queryString = `UPDATE user SET
-        firstName= ?, lastName = ?, gender = ?, email = ?, password = ?,phoneNumber = ?,permission = ?
+    updateUsers: (data, callBack) => {
+        const queryString = `UPDATE users SET
+        email= ?, password = ?, permission = ?, name = ?, 
         WHERE id = ?`;
         const params = Object.values(data);
         pool.query(queryString, params, (error, results, fields) => {
@@ -218,16 +218,16 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    updateCategory: (data, callBack) => {
-        const queryString = `UPDATE category SET
-        CategoryName = ?
+    updateBrands: (data, callBack) => {
+        const queryString = `UPDATE brands SET
+        brandName = ?
      WHERE id = ?`;
-        // const params = Object.values(data);
+        
         const params = [
-            data.CategoryName,
+            data.brandName,
             data.id
         ]
-        console.log("Update category:",params);
+        console.log("Update brands:",params);
         pool.query(queryString, params, (error, results, fields) => {
             console.log(params, queryString, results);
             if (error) {
@@ -237,42 +237,21 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    updateItem: (data, callBack) => {
-        const queryString = `UPDATE item set
-        categoryesId = ?, itemName = ?, Image = ?, unit = ?,alcoholcontent = ?,brand = ?
+    updateMotors: (data, callBack) => {
+        const queryString = `UPDATE motors set
+        name = ?, price = ?, brandId = ?, motoVolume = ?,height = ?,typeId = ?
       WHERE id = ?`;
         // const params = Object.values(data);
         const params = [
-            data.categoryesId,
-            data.itemName,
-            data.Image,
-            data.unit,
-            data.alcoholcontent,
-            data.brand,
-            data.id
-        ]
-        console.log("Update item:",params);
-        pool.query(queryString, params, (error, results, fields) => {
-            console.log(params, queryString, results);
-            if (error) {
-                return callBack(error);
-
-            }
-            return callBack(null, results);
-        });
-    },
-    updateItemPrices: (data, callBack) => {
-        const queryString = `UPDATE itemprice SET
-        itemId = ?, Date = ?, price = ?
-      WHERE id = ?;`;
-        // const params = Object.values(data);
-        const params = [
-            data.itemId,
-            data.Date,
+            data.name,
             data.price,
+            data.brandId,
+            data.motoVolume,
+            data.height,
+            data.typeId,
             data.id
         ]
-        console.log("Update itemprice:",params);
+        console.log("Update motors:",params);
         pool.query(queryString, params, (error, results, fields) => {
             console.log(params, queryString, results);
             if (error) {
@@ -282,19 +261,37 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    updateUserRating: (data, callBack) => {
-        const queryString = `UPDATE userrating SET
-        userId = ?, comment = ?, rating = ?, itemId = ?
+    updateTypes: (data, callBack) => {
+        const queryString = `UPDATE types SET
+        type = ?,
+      WHERE id = ?;`;
+        
+        const params = [
+            data.type,
+            data.id
+        ]
+        console.log("Update types:",params);
+        pool.query(queryString, params, (error, results, fields) => {
+            console.log(params, queryString, results);
+            if (error) {
+                return callBack(error);
+
+            }
+            return callBack(null, results);
+        });
+    },
+    updateVotes: (data, callBack) => {
+        const queryString = `UPDATE votes SET
+        userId = ?, vote = ?, motoId = ?
       WHERE id = ?`;
         // const params = Object.values(data);
         const params = [
             data.userId,
-            data.comment,
-            data.rating,
-            data.itemId,
+            data.vote,
+            data.motoId,
             data.id
         ]
-        console.log("Update userrating:",params);
+        console.log("Update votes:",params);
         pool.query(queryString, params, (error, results, fields) => {
             console.log(params, queryString, results);
             if (error) {
@@ -305,7 +302,7 @@ module.exports = {
         });
     },
     deleteUser: (data, callBack) => {
-        const queryString = `DELETE FROM user WHERE id = ?`;
+        const queryString = `DELETE FROM users WHERE id = ?`;
         const params = [data.id];
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
@@ -314,8 +311,8 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    deleteCategory: (data, callBack) => {
-        const queryString = `delete from category where id = ?`;
+    deleteBrands: (data, callBack) => {
+        const queryString = `delete from brands where id = ?`;
         const params = [data.id];
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
@@ -324,8 +321,8 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    deleteItem: (data, callBack) => {
-        const queryString = `delete from item where id = ?`;
+    deleteMotors: (data, callBack) => {
+        const queryString = `delete from motors where id = ?`;
         const params = [data.id];
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
@@ -334,8 +331,8 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    deleteItemPrice: (data, callBack) => {
-        const queryString = `delete from itemprice where id = ?`;
+    deleteTypes: (data, callBack) => {
+        const queryString = `delete from types where id = ?`;
         const params = [data.id];
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
@@ -344,8 +341,8 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    deleteUserRating: (data, callBack) => {
-        const queryString = `delete from userrating where id = ?`;
+    deleteVotes: (data, callBack) => {
+        const queryString = `delete from votes where id = ?`;
         const params = [data.id];
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
