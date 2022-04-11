@@ -5,15 +5,15 @@
   <SchemaVersion>1.2</SchemaVersion>
   <DatabaseProvider>59f90733-4d68-4fdf-82a7-f0fcbf5460aa</DatabaseProvider>
   <Connection>
-    <Name>localhost</Name>
+    <Name>localhost1</Name>
     <Category>00000000-0000-0000-0000-000000000000</Category>
     <ConnectionString>User Id=root;Host=localhost;Character Set=utf8</ConnectionString>
   </Connection>
   <Settings>
     <DbDiagramOptions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <EnableComments>false</EnableComments>
-      <TableCompartments>None</TableCompartments>
-      <CustomProperties />
+      <CustomProperties>
+        <BackgroundColor>ControlLightLight</BackgroundColor>
+      </CustomProperties>
     </DbDiagramOptions>
     <Options xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PageOptions">
       <TopLeftMargins>
@@ -54,19 +54,19 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>90 px</X>
-              <Y>-210 px</Y>
+              <X>-580 px</X>
+              <Y>-300 px</Y>
             </Location>
             <Size>
-              <Width>155 px</Width>
-              <Height>110 px</Height>
+              <Width>181 px</Width>
+              <Height>126 px</Height>
             </Size>
             <DbOid>
-              <Path>italbolt.itemprice</Path>
+              <Path>motorcycles.brands</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <ConstraintsCollapsed>False</ConstraintsCollapsed>
               <IndexesCollapsed>True</IndexesCollapsed>
               <TriggersCollapsed>True</TriggersCollapsed>
             </Compartments>
@@ -77,15 +77,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-300 px</X>
-              <Y>-270 px</Y>
+              <X>-250 px</X>
+              <Y>-300 px</Y>
             </Location>
             <Size>
-              <Width>203 px</Width>
+              <Width>187 px</Width>
               <Height>195 px</Height>
             </Size>
             <DbOid>
-              <Path>italbolt.item</Path>
+              <Path>motorcycles.motors</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -100,15 +100,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-590 px</X>
-              <Y>-100 px</Y>
+              <X>20 px</X>
+              <Y>-280 px</Y>
             </Location>
             <Size>
-              <Width>190 px</Width>
-              <Height>90 px</Height>
+              <Width>137 px</Width>
+              <Height>107 px</Height>
             </Size>
             <DbOid>
-              <Path>italbolt.category</Path>
+              <Path>motorcycles.types</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -123,15 +123,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-440 px</X>
-              <Y>50 px</Y>
+              <X>-580 px</X>
+              <Y>-20 px</Y>
             </Location>
             <Size>
-              <Width>196 px</Width>
-              <Height>178 px</Height>
+              <Width>190 px</Width>
+              <Height>144 px</Height>
             </Size>
             <DbOid>
-              <Path>italbolt.user</Path>
+              <Path>motorcycles.users</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -146,15 +146,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-870 px</X>
+              <X>-240 px</X>
               <Y>-10 px</Y>
             </Location>
             <Size>
-              <Width>167 px</Width>
-              <Height>127 px</Height>
+              <Width>180 px</Width>
+              <Height>144 px</Height>
             </Size>
             <DbOid>
-              <Path>italbolt.userrating</Path>
+              <Path>motorcycles.votes</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -176,42 +176,42 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>55 px</Y>
+                  <X>189.2 px</X>
+                  <Y>139.2 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>8</OID>
-                  <PortType>FloatAnchor</PortType>
+                  <PortType>FixedAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>45 px</Y>
+                  <X>16.8 px</X>
+                  <Y>37.6 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>9</OID>
-                  <PortType>FloatAnchor</PortType>
+                  <PortType>FixedAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>-320 px</X>
-                <Y>-215 px</Y>
+                <X>-43 px</X>
+                <Y>-160.8 px</Y>
               </PointD>
               <PointD>
-                <X>-320 px</X>
-                <Y>-55 px</Y>
+                <X>-43 px</X>
+                <Y>-242.4 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>italbolt.item.FK_items_kategoria_id</Path>
+              <Path>motorcycles.motors.FK_motors_types_id</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -225,11 +225,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>20 px</X>
-                  <Y>-80 px</Y>
+                  <X>-20 px</X>
+                  <Y>40.8000061035156 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Left</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>10</OID>
                   <PortType>FixedAnchor</PortType>
@@ -246,8 +246,8 @@
             <CustomProperties>
               <OID>11</OID>
               <Comment>12</Comment>
-              <OutModel>1</OutModel>
-              <InModel>2</InModel>
+              <OutModel>2</OutModel>
+              <InModel>1</InModel>
               <OutPort>13</OutPort>
               <InPort>14</InPort>
               <Parent>0</Parent>
@@ -256,7 +256,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>55 px</Y>
+                  <Y>94.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -267,8 +267,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>202 px</X>
-                  <Y>37 px</Y>
+                  <X>165.6 px</X>
+                  <Y>36 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
@@ -280,17 +280,17 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>70 px</X>
-                <Y>-155 px</Y>
+                <X>-270 px</X>
+                <Y>-205.5 px</Y>
               </PointD>
               <PointD>
-                <X>70 px</X>
-                <Y>-233 px</Y>
+                <X>-270 px</X>
+                <Y>-264 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>italbolt.itemprice.FK_itemprice_item_id</Path>
+              <Path>motorcycles.motors.FK_motors_brands_id</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -304,8 +304,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>103.5 px</X>
-                  <Y>78 px</Y>
+                  <X>84.5 px</X>
+                  <Y>58.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -326,7 +326,7 @@
               <OID>16</OID>
               <Comment>17</Comment>
               <OutModel>5</OutModel>
-              <InModel>2</InModel>
+              <InModel>4</InModel>
               <OutPort>18</OutPort>
               <InPort>19</InPort>
               <Parent>0</Parent>
@@ -334,8 +334,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>14 px</X>
-                  <Y>103 px</Y>
+                  <X>-2.40000000000001 px</X>
+                  <Y>73.2 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -346,11 +346,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>11 px</X>
-                  <Y>33 px</Y>
+                  <X>188 px</X>
+                  <Y>38.4 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Left</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>19</OID>
                   <PortType>FixedAnchor</PortType>
@@ -359,17 +359,17 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>-889 px</X>
-                <Y>93 px</Y>
+                <X>-260 px</X>
+                <Y>63.2 px</Y>
               </PointD>
               <PointD>
-                <X>-889 px</X>
-                <Y>-237 px</Y>
+                <X>-260 px</X>
+                <Y>18.4 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>italbolt.userrating.FK_userrating_item_id</Path>
+              <Path>motorcycles.votes.FK_votes_users_id</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -383,8 +383,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-275.5 px</X>
-                  <Y>330 px</Y>
+                  <X>85 px</X>
+                  <Y>44.8000003814697 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -400,92 +400,13 @@
               <Y>2 px</Y>
             </CommentOffset>
           </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
-              <OID>21</OID>
-              <Comment>22</Comment>
-              <OutModel>5</OutModel>
-              <InModel>4</InModel>
-              <OutPort>23</OutPort>
-              <InPort>24</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>157 px</X>
-                  <Y>54 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>23</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>14 px</X>
-                  <Y>36 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Left</Align>
-                <CustomProperties>
-                  <OID>24</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>-683 px</X>
-                <Y>44 px</Y>
-              </PointD>
-              <PointD>
-                <X>-683 px</X>
-                <Y>86 px</Y>
-              </PointD>
-            </BendPoints>
-            <IsManuallyRouted>false</IsManuallyRouted>
-            <DbOid>
-              <Path>italbolt.userrating.FK_userrating_user_id</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>22</OID>
-              <HolderModel>21</HolderModel>
-              <Port>25</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>-141.5 px</X>
-                  <Y>-42 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>25</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>22 px</X>
-              <Y>2 px</Y>
-            </CommentOffset>
-          </Model>
         </Children>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
           <Scale>1</Scale>
           <Location>
-            <X>-1209.49957275391 px</X>
-            <Y>-324 px</Y>
+            <X>-809.599999904633 px</X>
+            <Y>-408.8 px</Y>
           </Location>
         </ViewPort>
       </Model>
