@@ -301,7 +301,7 @@ module.exports = {
             return callBack(null, results);
         });
     },
-    deleteUser: (data, callBack) => {
+    deleteUsers: (data, callBack) => {
         const queryString = `DELETE FROM users WHERE id = ?`;
         const params = [data.id];
         pool.query(queryString, params, (error, results, fields) => {
