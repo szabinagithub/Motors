@@ -7,7 +7,7 @@ Content-Type: application/json
     "password": "admin"
 }
 
-# USER
+# USERS
 
 ### Users
 get http://localhost:3000/api/users
@@ -23,26 +23,21 @@ post http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-     "firstName": "Levente",
-     "lastName": "Füle",
-     "gender": "férfi",
+     
+     "name": "Szabina",
      "email": "admin@gmail.com",
-     "password": "admin123456789",
-     "phoneNumber": "06304512350",
+     "password": "admin123",
      "permission": 1
 }
 
-### User módosítása
+### User change 
 put http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "firstName": "Levente",
-    "lastName": "Füle",
-    "gender": "férfi",
+    "name": "Szabina",
     "email": "admin@gmail.com",
-    "password": "admin",
-    "phoneNumber":"06301234535",
+    "password": "admin123",
     "permission": 1,
     "id": 9
 }
@@ -56,48 +51,50 @@ Content-Type: application/json
 }
 
 
-#CATEGORY
+# BRANDS
 
 
-### create categorys
-post http://localhost:3000/api/users/category
+### create brands
+post http://localhost:3000/api/users/brands
 Content-Type: application/json
 
 {
     "id": 2,
-     "categoryName": "Gin"
+     "brandName": "Honda"
 }
 
-### get categorys
-get http://localhost:3000/api/users/category/categories
+### get brands
+get http://localhost:3000/api/users/brands/brandsList
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTEyNTYzOCwiZXhwIjoxNjQ1MTI5MjM4fQ.62U_xM_tXvohkZ1TlZqxSLLil5Y1dTbfmPgB2JYUlsQ
 
 
-### Egy category
-get http://localhost:3000/api/users/category/categories/2
+### 1 brand
+get http://localhost:3000/api/users/brands/brandsList/2
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
 
 
-### category módosítása
-put http://localhost:3000/api/users/category
+### brands change
+put http://localhost:3000/api/users/brands
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTEyNTYzOCwiZXhwIjoxNjQ1MTI5MjM4fQ.62U_xM_tXvohkZ1TlZqxSLLil5Y1dTbfmPgB2JYUlsQ
 
 {
-    "CategoryName": "Pálinka",
+    "brandName": "Suzuki",
     "id": 1
 }
 
-### Delete category
-delete http://localhost:3000/api/users/category
+### delete brands
+delete http://localhost:3000/api/users/brands
 Content-Type: application/json
 
 {
     "id": 2
 }
 
-### Items hozzáadása
-post http://localhost:3000/api/users/items
+# MOTORS
+
+### create motors-------------------
+post http://localhost:3000/api/users/motors
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
 
@@ -111,15 +108,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiO
 
  }
 
-### get items
+### get motors
 get http://localhost:3000/api/users/items/itemList
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
 
-### Egy Item
+### 1 motor
 get http://localhost:3000/api/users/items/itemList/6
 Authorization: Bearer
 
-### item módosítása
+### motors change
 put http://localhost:3000/api/users/items
 Content-Type: application/json
 
@@ -133,7 +130,7 @@ Content-Type: application/json
     "id": 6
 }
 
-### Delete item
+### delete motors
 delete http://localhost:3000/api/users/items
 Content-Type: application/json
 
@@ -141,7 +138,9 @@ Content-Type: application/json
     "id": 6
 }
 
-### Item prices hozzáadása
+# TYPES
+
+### create types
 post http://localhost:3000/api/users/itemprices
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
@@ -152,15 +151,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiO
     "price": "7999"
 }
 
-### get itemprices
+### get types
 get http://localhost:3000/api/users/items/itemprices
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTEyNTYzOCwiZXhwIjoxNjQ1MTI5MjM4fQ.62U_xM_tXvohkZ1TlZqxSLLil5Y1dTbfmPgB2JYUlsQ
 
-### Egy itemprice
+### 1 type
 get http://localhost:3000/api/users/items/itemprices/2"
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NDMxNTE5NCwiZXhwIjoxNjQ0MzE4Nzk0fQ.q2ih8UiVs51Pa3UEc908O6tLt5Upl9NOlidEmQSksMQ
 
-### price módosítása
+### types change
 put http://localhost:3000/api/users/items/itemprices
 Content-Type: application/json
 
@@ -171,7 +170,7 @@ Content-Type: application/json
     "id": 2
 }
 
-### Delete itemprice
+### delete types
 delete http://localhost:3000/api/users/itemprices
 Content-Type: application/json
 
@@ -179,7 +178,9 @@ Content-Type: application/json
     "id": 6
 }
 
-### userrating hozzáadása
+# VOTES
+
+### create votes
 post http://localhost:3000/api/users/userrating
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
@@ -191,15 +192,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiO
     "itemId": 5
  }
 
-### get userratings
+### get votes
 get http://localhost:3000/api/users/items/userrating
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTEyNTYzOCwiZXhwIjoxNjQ1MTI5MjM4fQ.62U_xM_tXvohkZ1TlZqxSLLil5Y1dTbfmPgB2JYUlsQ
 
-### Egy userrating
+### 1 vote
 get http://localhost:3000/api/users/items/userrating/2"
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NDMxNTE5NCwiZXhwIjoxNjQ0MzE4Nzk0fQ.q2ih8UiVs51Pa3UEc908O6tLt5Upl9NOlidEmQSksMQ
 
-### userrating módosítása
+### votes change
 put http://localhost:3000/api/users/items/userrating
 Content-Type: application/json
 
@@ -211,7 +212,7 @@ Content-Type: application/json
     "id": 2
 }
 
-### Delete userrating
+### delete votes
 delete http://localhost:3000/api/users/items/userrating
 Content-Type: application/json
 

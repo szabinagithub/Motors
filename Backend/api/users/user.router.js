@@ -1,5 +1,5 @@
 const {
-     createUsers, /* OR create */
+     createUsers, 
      getUsersByUserId,
      getUsers,
      updateUsers,
