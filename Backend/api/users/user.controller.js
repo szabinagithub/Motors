@@ -39,7 +39,7 @@ const {
 
 module.exports = {
     
-    createUser: (req, res) => {
+    createUsers: (req, res) => {
         const body = req.body;
         const salt = genSaltSync(10);
         console.log(body);
@@ -70,10 +70,10 @@ module.exports = {
             });
         });
     },
-    createCategory: (req, res) => {
+    createBrands: (req, res) => {
         const body = req.body;
         console.log(body);
-        createCategory(body, (err, results) => {
+        createBrands(body, (err, results) => {
             console.log(results);
             if (err) {
                 console.log(err);
@@ -97,10 +97,10 @@ module.exports = {
             });
         });
     },
-    createItems: (req, res) => {
+    createMotors: (req, res) => {
         const body = req.body;
         console.log(body);
-        createItems(body, (err, results) => {
+        createMotors(body, (err, results) => {
             console.log(results);
             if (err) {
                 console.log(err);
@@ -124,9 +124,9 @@ module.exports = {
             });
         });
     },
-    createitemPrices: (req, res) => {
+    createTypes: (req, res) => {
         const body = req.body;
-        createitemPrices(body, (err, results) => {
+        createTypes(body, (err, results) => {
             console.log(results);
             if (err) {
                 console.log(err);
@@ -150,9 +150,9 @@ module.exports = {
             });
         });
     },
-    createuserrating: (req, res) => {
+    createVotes: (req, res) => {
         const body = req.body;
-        createuserrating(body, (err, results) => {
+        createVotes(body, (err, results) => {
             console.log(results);
             if (err) {
                 console.log(err);
@@ -176,9 +176,9 @@ module.exports = {
             });
         });
     },
-    getItemPriceById: (req, res) => {
+    getTypesById: (req, res) => {
         const id = req.params.id;
-        getItemPriceById(id, (err, results) => {
+        getTypesById(id, (err, results) => {
             if (err) {
                 return res.status(500).json({
                     success: -1,
@@ -200,9 +200,9 @@ module.exports = {
             });
         });
     },
-    getUserByUserId: (req, res) => {
+    getUsersByUserId: (req, res) => {
         const id = req.params.id;
-        getUserByUserId(id, (err, results) => {
+        getUsersByUserId(id, (err, results) => {
             if (err) {
                 return res.status(500).json({
                     success: -1,
@@ -224,9 +224,9 @@ module.exports = {
             });
         });
     },
-    getCategoryById: (req, res) => {
+    getBrandsById: (req, res) => {
         const id = req.params.id;
-        getCategoryById(id, (err, results) => {
+        getBrandsById(id, (err, results) => {
             if (err) {
                 return res.status(500).json({
                     success: -1,
@@ -248,8 +248,8 @@ module.exports = {
             });
         });
     },
-    getItemPrices: (req, res) => {
-        getItemPrices((err, results) => {
+    getTypes: (req, res) => {
+        getTypes((err, results) => {
             if (err) {
                 return res.status(500).json({
                     success: -1,
@@ -294,8 +294,8 @@ module.exports = {
             });
         });
     },
-    getCategories: (req, res) => {
-        getCategories((err, results) => {
+    getBrands: (req, res) => {
+        getBrands((err, results) => {
             if (err) {
                 return res.status(500).json({
                     success: -1,
@@ -317,8 +317,8 @@ module.exports = {
             });
         });
     },
-    getItems: (req, res) => {
-        getItems((err, results) => {
+    getMotors: (req, res) => {
+        getMotors((err, results) => {
             if (err) {
                 return res.status(500).json({
                     success: -1,
@@ -340,8 +340,8 @@ module.exports = {
             });
         });
     },
-    getUserRateing: (req, res) => {
-        getUserRateing((err, results) => {
+    getUserVotes: (req, res) => {
+        getUserVotes((err, results) => {
             if (err) {
                 return res.status(500).json({
                     success: -1,
@@ -363,9 +363,9 @@ module.exports = {
             });
         });
     },
-    getItemById: (req, res) => {
+    getMotorsById: (req, res) => {
         const id = req.params.id;
-        getItemById(id, (err, results) => {
+        getMotorsById (id, (err, results) => {
             if (err) {
                 return res.status(500).json({
                     success: -1,
@@ -387,9 +387,9 @@ module.exports = {
             });
         });
     },
-    getUserRatingById: (req, res) => {
+    getUserVotesById: (req, res) => {
         const id = req.params.id;
-        getUserRatingById(id, (err, results) => {
+        getUserVotesById(id, (err, results) => {
             if (err) {
                 return res.status(500).json({
                     success: -1,
@@ -415,7 +415,7 @@ module.exports = {
         const body = req.body;
         const salt = genSaltSync(10);
         body.password = hashSync(body.password, salt);
-        updateUser(body, (err, results) => {
+        updateUsers(body, (err, results) => {
             if (err) {
                 return res.status(500).json({
                     success: -1,
@@ -437,9 +437,9 @@ module.exports = {
             });
         });
     },
-    updateCategory: (req, res) => {
+    updateBrands: (req, res) => {
         const body = req.body;
-        updateCategory(body, (err, results) => {
+        updateBrands(body, (err, results) => {
             if (err) {
                 return res.status(500).json({
                     success: -1,
@@ -461,9 +461,9 @@ module.exports = {
             });
         });
     },
-    updateItem: (req, res) => {
+    updateMotors: (req, res) => {
         const body = req.body;
-        updateItem(body, (err, results) => {
+        updateMotors(body, (err, results) => {
             if (err) {
                 return res.status(500).json({
                     success: -1,
@@ -485,9 +485,9 @@ module.exports = {
             });
         });
     },
-    updateItemPrices: (req, res) => {
+    updateTypes: (req, res) => {
         const body = req.body;
-        updateItemPrices(body, (err, results) => {
+        updateTypes(body, (err, results) => {
             if (err) {
                 return res.status(500).json({
                     success: -1,
@@ -509,9 +509,9 @@ module.exports = {
             });
         });
     },
-    updateUserRating: (req, res) => {
+    updateVotes: (req, res) => {
         const body = req.body;
-        updateUserRating(body, (err, results) => {
+        updateVotes(body, (err, results) => {
             if (err) {
                 return res.status(500).json({
                     success: -1,
@@ -533,9 +533,9 @@ module.exports = {
             });
         });
     },
-    deleteUser: (req, res) => {
+    deleteUsers: (req, res) => {
         const data = req.body;
-        deleteUser(data, (err, results) => {
+        deleteUsers(data, (err, results) => {
             // console.log(results);
             if (err) {
                 res.status(500).json({
@@ -559,10 +559,10 @@ module.exports = {
             });
         });
     },
-    deleteCategory: (req, res) => {
+    deleteBrands: (req, res) => {
         const data = req.body;
-        deleteCategory(data, (err, results) => {
-            // console.log(results);
+        deleteBrands(data, (err, results) => {
+            
             if (err) {
                 res.status(500).json({
                     deletedRows: 0,
@@ -585,9 +585,9 @@ module.exports = {
             });
         });
     },
-    deleteItem: (req, res) => {
+    deleteMotors: (req, res) => {
         const data = req.body;
-        deleteItem(data, (err, results) => {
+        deleteMotors(data, (err, results) => {
             if (err) {
                 res.status(500).json({
                     deletedRows: 0,
@@ -610,9 +610,9 @@ module.exports = {
             });
         });
     },
-    deleteItemPrice: (req, res) => {
+    deleteTypes: (req, res) => {
         const data = req.body;
-        deleteItemPrice(data, (err, results) => {
+        deleteTypes(data, (err, results) => {
             if (err) {
                 res.status(500).json({
                     deletedRows: 0,
@@ -635,9 +635,9 @@ module.exports = {
             });
         });
     },
-    deleteUserRating: (req, res) => {
+    deleteVotes: (req, res) => {
         const data = req.body;
-        deleteUserRating(data, (err, results) => {
+        deleteVotes(data, (err, results) => {
             if (err) {
                 res.status(500).json({
                     deletedRows: 0,
@@ -662,7 +662,7 @@ module.exports = {
     },
     login: (req, res) => {
         const body = req.body;
-        getUserByUserEmail(body.email, (err, results) => {
+        getUsersByUserEmail(body.email, (err, results) => {
             if (err) {
                 console.log(err);
             }
