@@ -1,64 +1,64 @@
 const {
-     createUser,
-     getUserByUserId,
+     createUsers, /* OR create */
+     getUsersByUserId,
      getUsers,
      updateUsers,
-     deleteUser,
+     deleteUsers,
      login,
-     createCategory,
-     getCategories,
-     getCategoryById,
-     updateCategory,
-     deleteCategory,
-     createItems,
-     getItems,
-     getItemById,
-     updateItem,
-     deleteItem,
-     createitemPrices,
-     getItemPrices,
-     getItemPriceById,
-     updateItemPrices,
-     deleteItemPrice,
-     createuserrating,
-     getUserRateing,
-     getUserRatingById,
-     updateUserRating,
-     deleteUserRating
+     createBrands,
+     getBrands,
+     getBrandsById,
+     updateBrands,
+     deleteBrands,
+     createMotors,
+     getMotors,
+     getMotorsById,
+     updateMotors,
+     deleteMotors,
+     createTypes,
+     getTypes,
+     getTypesById,
+     updateTypes,
+     deleteTypes,
+     createVotes,
+     getUserVotes,
+     getUserVotesById,
+     updateVotes,
+     deleteVotes
 } = require("./user.controller.js")
 const router = require("express").Router();
 const {checkToken} = require("../../auth/token_validation");
 
- router.post("/users/", checkToken, createUser);
+ router.post("/users/", checkToken, createUsers);
  router.get("/users/", checkToken, getUsers);
- router.get("/users/:id", checkToken, getUserByUserId);
+ router.get("/users/:id", checkToken, getUsersByUserId);
  router.put("/users/", checkToken, updateUsers);
- router.delete("/users/", checkToken, deleteUser);
+ router.delete("/users/", checkToken, deleteUsers);
  router.post("/users/login", login);
 
-router.post("/users/category", checkToken, createCategory);
-router.get("/users/category/categories", checkToken, getCategories);
-router.get("/users/category/categories/:id", checkToken, getCategoryById);
-router.put("/users/category", checkToken, updateCategory);
-router.delete("/users/category", checkToken, deleteCategory);
+router.post("/users/brands", checkToken, createBrands);
+router.get("/users/brands/brandsList", checkToken, getBrands);
+router.get("/users/brands/brandsList/:id", checkToken, getBrandsById);
+router.put("/users/brands", checkToken, updateBrands);
+router.delete("/users/brands", checkToken, deleteBrands);
  
-router.post("/users/items", checkToken, createItems);
-router.get("/users/items/itemList", checkToken, getItems);
-router.get("/users/items/itemList/:id", checkToken, getItemById);
-router.put("/users/items", checkToken, updateItem);
-router.delete("/users/items", checkToken, deleteItem);
+router.post("/users/motors", checkToken, createMotors);
+router.get("/users/motors/motorsList", checkToken, getMotors);
+router.get("/users/motors/motorsList/:id", checkToken, getMotorsById);
+router.put("/users/motors", checkToken, updateMotors);
+router.delete("/users/motors", checkToken, deleteMotors);
 
-router.post("/users/itemprices", checkToken, createitemPrices);
-router.get("/users/items/itemprices", checkToken, getItemPrices);
-router.get("/users/items/itemprices/:id", checkToken, getItemPriceById);
-router.put("/users/items/itemprices", checkToken, updateItemPrices);
-router.delete("/users/itemprices", checkToken, deleteItemPrice);
+router.post("/users/types", checkToken, createTypes);
+router.get("/users/motors/types", checkToken, getTypes);
+router.get("/users/motors/types/:id", checkToken, getTypesById);
+router.put("/users/motors/types", checkToken, updateTypes);
+router.delete("/users/types", checkToken, deleteTypes);
 
-router.post("/users/userrating", checkToken, createuserrating);
-router.get("/users/items/userrating", checkToken, getUserRateing);
-router.get("/users/items/userrating/:id", checkToken, getUserRatingById);
-router.put("/users/items/userrating", checkToken, updateUserRating);
-router.delete("/users/items/userrating", checkToken, deleteUserRating);
+router.post("/users/votes", checkToken, createVotes);
+router.get("/users/motors/votes", checkToken, getUserVotes);
+router.get("/users/motors/votes/:id", checkToken, getUserVotesById);
+router.put("/users/motors/votes", checkToken, updateVotes);
+router.delete("/users/motors/votes", checkToken, deleteVotes);
 
 
 module.exports = router;
