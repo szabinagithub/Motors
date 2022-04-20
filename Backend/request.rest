@@ -27,7 +27,8 @@ Content-Type: application/json
      "name": "Szabina",
      "email": "admin@gmail.com",
      "password": "admin123",
-     "permission": 1
+     "permission": 1,
+     "id":2,
 }
 
 ### User change 
@@ -39,6 +40,7 @@ Content-Type: application/json
     "email": "szandi@gmail.com",
     "password": "sz123",
     "permission": 2,
+    "id":3,
     
 }
 
@@ -47,7 +49,7 @@ delete http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "id": 1
+    "id": 2
 }
 
 
@@ -88,7 +90,7 @@ delete http://localhost:3000/api/users/brands
 Content-Type: application/json
 
 {
-    "id": 2
+    "id": 1
 }
 
 # MOTORS
@@ -101,10 +103,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiO
 { 
     "id": 2, 
     "name": "Honda CB500F", 
-    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.honda.hu%2Fmotorcycles%2Frange%2Fstreet%2Fcb500f%2Fspecifications.html&psig=AOvVaw3WaHgdtg0UdZA2D_2OtQ9P&ust=1650556904546000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLDkguOBo_cCFQAAAAAdAAAAABAD",
-    "price": "2289000",
-    "height": "785",
-    "brand": "Honda"
+    "price": 2289000,
+    "height": 785,
+    "motoVolume":500,
+    "brandId": 3,
+    "typeId":5,
 
  }
 
@@ -113,7 +116,7 @@ get http://localhost:3000/api/users/motors/motorsList
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
 
 ### 1 motor
-get http://localhost:3000/api/users/motors/motorsList/3
+get http://localhost:3000/api/users/motors/motorsList/1
 Authorization: Bearer
 
 ### motors change
@@ -121,12 +124,14 @@ put http://localhost:3000/api/users/motors
 Content-Type: application/json
 
 {
+  
     "id": 4, 
     "name": "Indian Chief Drak Horse", 
-    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.honda.hu%2Fmotorcycles%2Frange%2Fstreet%2Fcb500f%2Fspecifications.html&psig=AOvVaw3WaHgdtg0UdZA2D_2OtQ9P&ust=1650556904546000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLDkguOBo_cCFQAAAAAdAAAAABAD",
-    "price": "7183000",
+    "price": 7183000,
+    "motoVolume": 1900,
     "height": "662",
-    "brand": "Indian"
+    "brandId": 2,
+    "typeId":1,
 }
 
 ### delete motors
@@ -134,7 +139,7 @@ delete http://localhost:3000/api/users/motors
 Content-Type: application/json
 
 {
-    "id": 6
+    "id": 2
 }
 
 # TYPES
@@ -172,7 +177,7 @@ delete http://localhost:3000/api/motors/types
 Content-Type: application/json
 
 {
-    "id": 6
+    "id": 1
 }
 
 # VOTES
@@ -183,6 +188,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
 
 { 
+    "id":2,
     "userId": 2, 
     "vote": "10/8", 
     "motoId": 3,
@@ -202,6 +208,7 @@ put http://localhost:3000/api/users/motors/votes
 Content-Type: application/json
 
 {
+    "id":3,
    "userId": 3, 
     "vote": "10/6", 
     "motoId": 2,
@@ -213,5 +220,5 @@ delete http://localhost:3000/api/users/motors/votes
 Content-Type: application/json
 
 {
-    "id": 1
+    "id": 2
 }

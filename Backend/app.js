@@ -19,12 +19,7 @@ app.use(express.json());
 //pl.: /api/users/login, /api/users/1 stb.
 app.use("/api", userRouter);
 
-// app.get("/api", (req, res) => {
-//     res.json({
-//         success: 1,
-//         message: "this is rest api working"
-//     });
-// });
+
 
 
 app.listen(appPort, () => {
