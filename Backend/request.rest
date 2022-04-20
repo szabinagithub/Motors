@@ -15,7 +15,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiO
 
 
 ### 1 User
-get http://localhost:3000/api/users/9
+get http://localhost:3000/api/users/2
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NDMxNTE5NCwiZXhwIjoxNjQ0MzE4Nzk0fQ.q2ih8UiVs51Pa3UEc908O6tLt5Upl9NOlidEmQSksMQ
 
 ### Add user 
@@ -35,11 +35,11 @@ put http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "name": "Szabina",
-    "email": "admin@gmail.com",
-    "password": "admin123",
-    "permission": 1,
-    "id": 9
+    "name": "Szandi",
+    "email": "szandi@gmail.com",
+    "password": "sz123",
+    "permission": 2,
+    
 }
 
 ### Delete user
@@ -59,8 +59,8 @@ post http://localhost:3000/api/users/brands
 Content-Type: application/json
 
 {
-    "id": 2,
-     "brandName": "Honda"
+    "id": 1,
+     "brandName": "Suzuki"
 }
 
 ### get brands
@@ -79,8 +79,8 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTEyNTYzOCwiZXhwIjoxNjQ1MTI5MjM4fQ.62U_xM_tXvohkZ1TlZqxSLLil5Y1dTbfmPgB2JYUlsQ
 
 {
-    "brandName": "Suzuki",
-    "id": 1
+    "brandName": "Ducati",
+    "id": 3
 }
 
 ### delete brands
@@ -99,39 +99,38 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
 
 { 
-    "categoryesId": 1, 
-    "itemName": "árpád alma pálinka", 
-    "image": "https://www.google.com/search?q=%C3%A1rp%C3%A1d+alma+p%C3%A1linka&hl=hu&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiz_4u1obb2AhWQyqQKHebKBWcQ_AUoAXoECAEQAw&biw=1920&bih=979&dpr=1#imgrc=vRdWbTfQ_OAhSM",
-    "unit": "0.5L",
-    "alcoholcontent": "40%",
-    "brand": "Árpád Pálinka"
+    "id": 2, 
+    "name": "Honda CB500F", 
+    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.honda.hu%2Fmotorcycles%2Frange%2Fstreet%2Fcb500f%2Fspecifications.html&psig=AOvVaw3WaHgdtg0UdZA2D_2OtQ9P&ust=1650556904546000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLDkguOBo_cCFQAAAAAdAAAAABAD",
+    "price": "2289000",
+    "height": "785",
+    "brand": "Honda"
 
  }
 
 ### get motors
-get http://localhost:3000/api/users/items/itemList
+get http://localhost:3000/api/users/motors/motorsList
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
 
 ### 1 motor
-get http://localhost:3000/api/users/items/itemList/6
+get http://localhost:3000/api/users/motors/motorsList/3
 Authorization: Bearer
 
 ### motors change
-put http://localhost:3000/api/users/items
+put http://localhost:3000/api/users/motors
 Content-Type: application/json
 
 {
-    "categoryesId": 1,
-    "itemName": "árpád alma pálink",
-    "Image": "https://www.google.com/search?q=%C3%A1rp%C3%A1d+alma+p%C3%A1linka&hl=hu&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiz_4u1obb2AhWQyqQKHebKBWcQ_AUoAXoECAEQAw&biw=1920&bih=979&dpr=1#imgrc=vRdWbTfQ_OAhSM",
-    "unit": "0.5L",
-    "alcoholcontent": 40,
-    "brand":"Árpád Pálinka",
-    "id": 6
+    "id": 4, 
+    "name": "Indian Chief Drak Horse", 
+    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.honda.hu%2Fmotorcycles%2Frange%2Fstreet%2Fcb500f%2Fspecifications.html&psig=AOvVaw3WaHgdtg0UdZA2D_2OtQ9P&ust=1650556904546000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLDkguOBo_cCFQAAAAAdAAAAABAD",
+    "price": "7183000",
+    "height": "662",
+    "brand": "Indian"
 }
 
 ### delete motors
-delete http://localhost:3000/api/users/items
+delete http://localhost:3000/api/users/motors
 Content-Type: application/json
 
 {
@@ -141,37 +140,35 @@ Content-Type: application/json
 # TYPES
 
 ### create types
-post http://localhost:3000/api/users/itemprices
+post http://localhost:3000/api/users/types
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
 
 { 
-    "itemId": 8, 
-    "Date": "2022-03-25 08:27:35", 
-    "price": "7999"
+    "id": 1, 
+    "type": "sport", 
+    
 }
 
 ### get types
-get http://localhost:3000/api/users/items/itemprices
+get http://localhost:3000/api/users/motors/types
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTEyNTYzOCwiZXhwIjoxNjQ1MTI5MjM4fQ.62U_xM_tXvohkZ1TlZqxSLLil5Y1dTbfmPgB2JYUlsQ
 
 ### 1 type
-get http://localhost:3000/api/users/items/itemprices/2"
+get http://localhost:3000/api/users/motors/types/2"
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NDMxNTE5NCwiZXhwIjoxNjQ0MzE4Nzk0fQ.q2ih8UiVs51Pa3UEc908O6tLt5Upl9NOlidEmQSksMQ
 
 ### types change
-put http://localhost:3000/api/users/items/itemprices
+put http://localhost:3000/api/users/motors/types
 Content-Type: application/json
 
 {
-    "itemId": 1,
-    "Date": "2022-03-25",
-    "price": "9998",
-    "id": 2
+     "id": 2, 
+    "type": "enduro",
 }
 
 ### delete types
-delete http://localhost:3000/api/users/itemprices
+delete http://localhost:3000/api/motors/types
 Content-Type: application/json
 
 {
@@ -181,39 +178,38 @@ Content-Type: application/json
 # VOTES
 
 ### create votes
-post http://localhost:3000/api/users/userrating
+post http://localhost:3000/api/users/votes
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
 
 { 
-    "userId": 1, 
-    "comment": "Ez szar", 
-    "rating": 2,
-    "itemId": 5
+    "userId": 2, 
+    "vote": "10/8", 
+    "motoId": 3,
+    
  }
 
 ### get votes
-get http://localhost:3000/api/users/items/userrating
+get http://localhost:3000/api/users/motors/votes
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTEyNTYzOCwiZXhwIjoxNjQ1MTI5MjM4fQ.62U_xM_tXvohkZ1TlZqxSLLil5Y1dTbfmPgB2JYUlsQ
 
 ### 1 vote
-get http://localhost:3000/api/users/items/userrating/2"
+get http://localhost:3000/api/users/motors/votes/2"
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NDMxNTE5NCwiZXhwIjoxNjQ0MzE4Nzk0fQ.q2ih8UiVs51Pa3UEc908O6tLt5Upl9NOlidEmQSksMQ
 
 ### votes change
-put http://localhost:3000/api/users/items/userrating
+put http://localhost:3000/api/users/motors/votes
 Content-Type: application/json
 
 {
-    "userId": 1,
-    "comment": "Ez nagyon jó",
-    "rating": 10,
-    "itemId": 2,
-    "id": 2
+   "userId": 3, 
+    "vote": "10/6", 
+    "motoId": 2,
+    
 }
 
 ### delete votes
-delete http://localhost:3000/api/users/items/userrating
+delete http://localhost:3000/api/users/motors/votes
 Content-Type: application/json
 
 {
