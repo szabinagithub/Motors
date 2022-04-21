@@ -8,12 +8,12 @@
     <ProviderVersion>8.2.23.0</ProviderVersion>
     <SchemaVersion>2.0</SchemaVersion>
   </Properties>
-  <Connection Name="localhost1">
+  <Connection Name="localhost">
     <Category>00000000-0000-0000-0000-000000000000</Category>
     <ConnectionString>User Id=root;Host=localhost;Character Set=utf8</ConnectionString>
-    <Database>information_schema</Database>
+    <Database>motorcycles</Database>
   </Connection>
-  <Views ShowAdditionalViews="False" IsLayoutActiveAttribute="True" MainViewAttribute="Code" MainViewScale="38">
+  <Views ShowAdditionalViews="False" IsLayoutActiveAttribute="True" MainViewAttribute="Code" MainViewScale="50">
     <View Name="Design" Visible="False" />
     <View Name="Code" Active="True" Visible="True">
       <Data />

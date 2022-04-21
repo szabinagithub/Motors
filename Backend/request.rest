@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
     "email": "admin@gmail.com",
-    "password": "admin"
+    "password": "admin123"
 }
 
 # USERS
@@ -27,8 +27,8 @@ Content-Type: application/json
      "name": "Szabina",
      "email": "admin@gmail.com",
      "password": "admin123",
-     "permission": 1,
-     "id":2,
+     "permission": 1
+     
 }
 
 ### User change 
@@ -40,7 +40,7 @@ Content-Type: application/json
     "email": "szandi@gmail.com",
     "password": "sz123",
     "permission": 2,
-    "id":3,
+    "id":2
     
 }
 
@@ -61,7 +61,7 @@ post http://localhost:3000/api/users/brands
 Content-Type: application/json
 
 {
-    "id": 1,
+    
      "brandName": "Suzuki"
 }
 
@@ -70,8 +70,8 @@ get http://localhost:3000/api/users/brands/brandsList
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTEyNTYzOCwiZXhwIjoxNjQ1MTI5MjM4fQ.62U_xM_tXvohkZ1TlZqxSLLil5Y1dTbfmPgB2JYUlsQ
 
 
-### 1 brand
-get http://localhost:3000/api/users/brands/brandsList/2
+### 1 brand--------
+get http://localhost:3000/api/users/brands/brandsList/11
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZpcnN0TmFtZSI6IkLDqWxhIiwibGFzdE5hbWUiOiJOYWd5b24iLCJnZW5kZXIiOiJmw6lyZmkiLCJlbWFpbCI6Im5hZ3kuYmVsYUBnbWFpbC5jb20iLCJudW1iZXIiOjM0MzQzNTUzNH0sImlhdCI6MTY0NTQ0NjI3MiwiZXhwIjoxNjQ1NDQ5ODcyfQ.mt6Ga598tVLQ3QXty4BF-amaU2Jbaww4U5z5AaUXvsg
 
 

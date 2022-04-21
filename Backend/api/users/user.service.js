@@ -3,11 +3,16 @@ const pool = require("../../config/database.js");
 module.exports = {
     create: (data, callBack) => {
         let queryString = `INSERT INTO users
-        (id,email,password,permission,name)
+        (email,password,permission,name)
         VALUES
-        (?,?,?,?,?,?,?)
+        (?,?,?,?)
         `
-        let params = Object.values(data);
+        let params =[
+            data.email,
+            data.password,
+            data.permission,
+            data.name
+        ]
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
                 return callBack(error);
@@ -18,11 +23,13 @@ module.exports = {
     },
     createBrands: (data, callBack) => {
         let queryString = `INSERT INTO brands
-        (id,brandName)
+        (brandName)
         VALUES
-        (?,?)
+        (?)
         `
-        let params = Object.values(data);
+        let params = [
+            data.brandName,
+        ]
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
                 return callBack(error);
@@ -206,7 +213,7 @@ module.exports = {
     },
     updateUsers: (data, callBack) => {
         const queryString = `UPDATE users SET
-        email= ?, password = ?, permission = ?, name = ?, 
+        email= ?, password = ?, permission = ?, name = ? 
         WHERE id = ?`;
         const params = Object.values(data);
         pool.query(queryString, params, (error, results, fields) => {

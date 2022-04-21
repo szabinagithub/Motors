@@ -29,12 +29,12 @@ const {
 const router = require("express").Router();
 const {checkToken} = require("../../auth/token_validation");
 
+router.post("/users/login", login);
  router.post("/users/", checkToken, createUsers);
  router.get("/users/", checkToken, getUsers);
  router.get("/users/:id", checkToken, getUsersByUserId);
  router.put("/users/", checkToken, updateUsers);
  router.delete("/users/", checkToken, deleteUsers);
- router.post("/users/login", login);
 
 router.post("/users/brands", checkToken, createBrands);
 router.get("/users/brands/brandsList", checkToken, getBrands);
