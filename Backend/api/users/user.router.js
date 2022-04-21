@@ -36,23 +36,23 @@ router.post("/users/login", login);
  router.put("/users/", checkToken, updateUsers);
  router.delete("/users/", checkToken, deleteUsers);
 
-router.post("/users/brands", checkToken, createBrands);
-router.get("/users/brands/brandsList", checkToken, getBrands);
-router.get("/users/brands/brandsList/:id", checkToken, getBrandsById);
-router.put("/users/brands", checkToken, updateBrands);
-router.delete("/users/brands", checkToken, deleteBrands);
+router.post("/brands", checkToken, createBrands);
+router.get("/brands", checkToken, getBrands);
+router.get("/brands/:id", checkToken, getBrandsById);
+router.put("/brands", checkToken, updateBrands);
+router.delete("/brands", checkToken, deleteBrands);
  
-router.post("/users/motors", checkToken, createMotors);
-router.get("/users/motors/motorsList", checkToken, getMotors);
-router.get("/users/motors/motorsList/:id", checkToken, getMotorsById);
-router.put("/users/motors", checkToken, updateMotors);
-router.delete("/users/motors", checkToken, deleteMotors);
+router.post("/motors", checkToken, createMotors);
+router.get("/motors", checkToken, getMotors);
+router.get("/motors/:id", checkToken, getMotorsById);
+router.put("/motors", checkToken, updateMotors);
+router.delete("/motors", checkToken, deleteMotors);
 
-router.post("/users/types", checkToken, createTypes);
-router.get("/users/motors/types", checkToken, getTypes);
-router.get("/users/motors/types/:id", checkToken, getTypesById);
-router.put("/users/motors/types", checkToken, updateTypes);
-router.delete("/users/types", checkToken, deleteTypes);
+router.post("/types", checkToken, createTypes);
+router.get("/types", checkToken, getTypes);
+router.get("/types/:id", checkToken, getTypesById);
+router.put("/types", checkToken, updateTypes);
+router.delete("/types", checkToken, deleteTypes);
 
 router.post("/users/votes", checkToken, createVotes);
 router.get("/users/motors/votes", checkToken, getUserVotes);

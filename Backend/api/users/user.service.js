@@ -40,11 +40,18 @@ module.exports = {
     },
     createMotors: (data, callBack) => {
         let queryString = `INSERT INTO motors
-        (id,name,price,brandId,motoVolume,height,typeId)
+        (name,price,brandId,motoVolume,height,typeId)
           VALUES
           (?,?,?,?,?,?)
         `
-        let params = Object.values(data);
+        let params = [
+            data.name,
+            data.price,
+            data.brandId,
+            data.motoVolume,
+            data.height,
+            data.typeId
+        ]
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
                 return callBack(error);
@@ -55,11 +62,13 @@ module.exports = {
     },
     createTypes: (data, callBack) => {
         let queryString = `INSERT INTO types
-        (id,type)
+        (type)
         VALUES
-        (?,?,?)
+        (?)
         `
-        let params = Object.values(data);
+        let params = [
+            data.type
+        ]
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
                 return callBack(error);
@@ -70,11 +79,15 @@ module.exports = {
     },
     createVotes: (data, callBack) => {
         let queryString = `INSERT INTO votes
-        (id,vote,userId,motoId)
+        (vote,userId,motoId)
         VALUES
-        (?,?,?,?)
+        (?,?,?)
         `
-        let params = Object.values(data);
+        let params = [
+            data.vote,
+            data.userId,
+            data.motoId
+        ]
         pool.query(queryString, params, (error, results, fields) => {
             if (error) {
                 return callBack(error);
@@ -226,9 +239,7 @@ module.exports = {
         });
     },
     updateBrands: (data, callBack) => {
-        const queryString = `UPDATE brands SET
-        brandName = ?
-     WHERE id = ?`;
+        const queryString = `UPDATE brands SET brandName = ? WHERE id = ?`;
         
         const params = [
             data.brandName,
@@ -256,7 +267,7 @@ module.exports = {
             data.motoVolume,
             data.height,
             data.typeId,
-            data.id
+            
         ]
         console.log("Update motors:",params);
         pool.query(queryString, params, (error, results, fields) => {
@@ -270,7 +281,7 @@ module.exports = {
     },
     updateTypes: (data, callBack) => {
         const queryString = `UPDATE types SET
-        type = ?,
+        type = ?
       WHERE id = ?;`;
         
         const params = [
@@ -296,7 +307,7 @@ module.exports = {
             data.userId,
             data.vote,
             data.motoId,
-            data.id
+          
         ]
         console.log("Update votes:",params);
         pool.query(queryString, params, (error, results, fields) => {
