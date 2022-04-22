@@ -1,0 +1,34 @@
+{
+    "hirek": [
+        {
+          "id": 1,
+          "title": "Hír 1",
+          "content": "lorem ..."
+        },
+        {
+          "id": 2,
+          "title": "Hír 2",
+          "content": "lorem ..."
+        },
+        {
+          "id": 3,
+          "title": "Hír 3",
+          "content": "lorem ..."
+        },
+        {
+          "id": 4,
+          "title": "Hír 4",
+          "content": "lorem ..."
+        },
+        {
+          "id": 5,
+          "title": "Hír 5",
+          "content": "lorem ..."
+        },
+        {
+          "id": 6,
+          "title": "Hír 6",
+          "content": "lorem ..."
+        }
+      ]
+}
