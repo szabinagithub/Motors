@@ -19,10 +19,8 @@ Vue.use(VueResource);
 Vue.use(VueRouter);
 
 class users {
-    constructor(email = null, password = null, permission = null, name = null) {
+    constructor(email = null, name = null) {
         this.email = email;
-        this.password = password;
-        this.permission = permission;
         this.name = name;
         
     }

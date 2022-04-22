@@ -45,7 +45,7 @@
                                     <router-link
                                         class="dropdown-item"
                                         to="/autopark"
-                                        >Autópark</router-link
+                                        >Motors</router-link
                                     >
                                 </li>
                                 <li>
@@ -76,7 +76,7 @@
                                 role="button"
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                {{$root.$data.user.firstName}}
+                                {{$root.$data.user.name}}
                             </a>
                             <ul
                                 class="dropdown-menu"
@@ -121,17 +121,15 @@
 </template>
 
 <script>
-class users {
+class User {
     constructor(
         name = null,
         email = null,
-        password = null,
         permission = null,
         
     ) {
         this.name = name;
         this.email = email;
-        this.password = password;
         this.permission = permission;
         
     }
